@@ -71,7 +71,7 @@ void loop() {
 
     delay(500); //Tempo necessario para girar em 90 graus
     
-    // Após o tempo necessario o carro segue em linha reta
+    // Após o tempo necessario o carro segue em linha reta, ligando os dois motores
     //motor1
     digitalWrite (p10, 1);
     digitalWrite (p9, 0);
