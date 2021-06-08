@@ -1,10 +1,12 @@
 //motor1
 int p10 = 10;
 int p9 = 9;
+int veloMotor1 = 11;
 
 //motor2
 int p6 = 6;
 int p5 = 5;
+int veloMotor2 = 3;
 
 // Pino 12 irá receber o pulso do echo
 int echoPino = 7;
@@ -27,6 +29,10 @@ void setup() {
   Serial.begin(9600);
   pinMode(echoPino, INPUT);
   pinMode(trigPino, OUTPUT);
+  
+  // Iniciar a velocidade dos motores
+  pinMode(velMotor1, 1);
+  pinMode(velMotor2, 1);
 
 }
 
@@ -51,6 +57,10 @@ void loop() {
   Serial.print("Distancia em cm: ");
   Serial.println(distancia);
 
+  // Definindo a velocidade do motor 1 e motor 2, range entre (0 - 255);
+  analogWrite(velMotor1, 230);
+  analogWrite(velMotor2, 230);
+  
   if(distancia <= 50){
 
     // Se o carro estiver a uma distancia menor ou igual a 50cm
@@ -64,12 +74,12 @@ void loop() {
     digitalWrite (p6, 0);
     digitalWrite (p5, 0);
 
-    delay(600); //Tempo que o carro vai aguardar
+    delay(900); //Tempo que o carro vai aguardar
 
     //motor1
     digitalWrite (p10, 1); // ligar apenas um motor para realizar a manobra
 
-    delay(500); //Tempo necessario para girar em 90 graus
+    delay(900); //Tempo necessario para girar em 90 graus
     
     // Após o tempo necessario o carro segue em linha reta, ligando os dois motores
     //motor1
