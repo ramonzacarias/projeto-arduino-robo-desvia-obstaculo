@@ -1,12 +1,12 @@
 //motor1
 int p10 = 10;
 int p9 = 9;
-int veloMotor1 = 11;
+int velMotor1 = 11;
 
 //motor2
 int p6 = 6;
 int p5 = 5;
-int veloMotor2 = 3;
+int velMotor2 = 3;
 
 // Pino 12 irá receber o pulso do echo
 int echoPino = 7;
